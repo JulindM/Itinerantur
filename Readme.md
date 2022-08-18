@@ -13,3 +13,5 @@ Supported modals:
  + Bike
 
 Written in Java 8 with the Gradle as the build chain.
+
+_This project was written as part of my bachelors thesis. For the documentation on how to use the tool and its architechture please refer to the Thesis PDF File (written in german) in the documentation folder._
