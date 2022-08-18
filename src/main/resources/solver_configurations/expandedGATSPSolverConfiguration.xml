@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<solver xmlns="https://www.optaplanner.org/xsd/solver" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="https://www.optaplanner.org/xsd/solver https://www.optaplanner.org/xsd/solver/solver.xsd">
+    <!-- Define the model -->
+    <solutionClass>com.itineratur.solver.Tour</solutionClass>
+    <entityClass>com.itineratur.solver.RoutePlan</entityClass>
+
+    <!-- Define the score function -->
+    <scoreDirectorFactory>
+       <incrementalScoreCalculatorClass>com.itineratur.solver.RouteScoreCalculator</incrementalScoreCalculatorClass>
+    </scoreDirectorFactory>
+
+    <!-- Configure the optimization algorithms (optional) -->
+    <termination>
+        <minutesSpentLimit>5</minutesSpentLimit>
+    </termination>
+    <localSearch>
+        <unionMoveSelector>
+            <changeMoveSelector/>
+            <swapMoveSelector/>
+            <subChainChangeMoveSelector>
+                <selectReversingMoveToo>true</selectReversingMoveToo>
+            </subChainChangeMoveSelector>
+            <subChainSwapMoveSelector>
+                <selectReversingMoveToo>true</selectReversingMoveToo>
+            </subChainSwapMoveSelector>
+        </unionMoveSelector>
+        <acceptor>
+            <lateAcceptanceSize>200</lateAcceptanceSize>
+        </acceptor>
+        <forager>
+            <acceptedCountLimit>1</acceptedCountLimit>
+        </forager>
+    </localSearch>
+</solver>
