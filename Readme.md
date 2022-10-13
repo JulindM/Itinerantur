@@ -1,6 +1,6 @@
 # Itinerantur
 
-Itineratntur is a tool that given a generalized asymmetric graph with time windows, 
+Itinerantur is a tool that given a generalized asymmetric graph with time windows, 
 tries to find an optimal route that solves the GATSPTW Problem (Generalized Asymmetric Traveling Salesman Problem with Time Windows).
 
 _The main solver for the internal reduced GATSP Problem is [GLKH](http://webhotel4.ruc.dk/~keld/research/GLKH/)._
